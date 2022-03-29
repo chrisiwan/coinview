@@ -1,0 +1,374 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+	<title>Cryptocurrency App</title>
+	<link rel='stylesheet' type='text/css' href='styles.css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div id='navbar'>
+		<div id='navInner'>
+			<a href='index.html'>
+			<div id='logo'><h1>coinview</h1></div>
+			</a>
+			<div id='searchbarContainer'>
+				<form id="searchbar" action="action_page.php">
+					<input type="text" placeholder="Search.." name="search">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>
+		<div id='navBottom'>
+			<a href='index.html'><div class='navButton'><h3>Home</h3></div></a>
+			<a href='marketData.html'><div class='navButton'><h3>Market Data</h3></div></a>
+			<a href='news.html'><div class='navButton'><h3>News</h3></div></a>
+		</div>
+		</div>
+	</div>
+	<div class='layoutMiddle'>
+		<div class='layoutLeft'>
+			<div class='newsArticleMain'>
+				<a href='#'>
+				<div id='newsArticleBanner'>
+					<div id='newsArticleBannerLeftImg'>
+					</div>
+					<div id='newsArticleBannerRightInfo'>
+						<h1>More US finance giants tiptoe into cryptoassets</h1>
+						<p>Investing in bitcoin and other digital currencies remains a risky game where the rules could change significantly, but the payoff could be big.</p>
+					</div>
+				</div>
+				</a>
+				<a href='#'>
+				<div class=newsArticle>
+					<div class='newsArticleImg' id='newsArticleImg1'>
+					</div>
+					<div class='newsArticleInfo'>
+						<h1>Bitcoin price - live: Crypto market hangs in balance after chaotic week</h1>
+						<p>A succession of positive news helped push the value of dogecoin and ethereum</p>
+					</div>
+				</div>
+				</a>
+				<a href='#'>
+				<div class=newsArticle>
+					<div class='newsArticleImg' id='newsArticleImg2'>
+					</div>
+					<div class='newsArticleInfo'>
+						<h1>3 UK shares to buy</h1>
+						<p>Rupet Hargreaves highlights his favourite UK shares to buy right now as the economy recovers from the pandemic</p>
+					</div>
+				</div>
+				</a>
+				<a href='#'>
+				<div class=newsArticle>
+					<div class='newsArticleImg' id='newsArticleImg3'>
+					</div>
+					<div class='newsArticleInfo'>
+						<h1>Travel industry calls for 'aircraft furlough' to cut pandemic costs</h1>
+						<p>The Treasury has been urged to spend millions of pounds maintaining aircraft that has been grounded by the UK's travel restrictions.</p>
+					</div>
+				</div>
+				</a>
+			</div>
+		</div>
+		<div class='layoutRight'>
+			<div class='tickerSide'>
+				<div class='tickerSideTicker'>
+					<div class='tickerSideTickerItem tickerSideSymbol'><h2>Cryptocurrencies</h2></div>
+				</div>
+				<div class='tickerSideTicker'>
+					<div class='tickerSideTickerItem tickerSideSymbol'><h2>Symbol</h2></div>
+					<div class='tickerSideTickerItem tickerSideLastPrice'><h3>Last price</h2></div>
+					<div class='tickerSideTickerItem tickerSideChange'><h3>Change</h3></div>
+					<div class='tickerSideTickerItem tickerSideChangePercent'>% Change</div>
+				</div>
+				<a href='btcusd.html'>
+					<div class='tickerSideTicker'>
+						<div class='tickerSideTickerItem tickerSideSymbol'><h2>BTC-USDT</h2></div>
+						<div class='tickerSideTickerItem tickerSideLastPrice'><h3 id='btcusdPrice'>1000</h2></div>
+						<div class='tickerSideTickerItem tickerSideChange'><h3 id='btcusdChange'>-50</h3></div>
+						<div class='tickerSideTickerItem tickerSideChangePercent btcusdPercentChange'><h3 id='btcusdPercentChange'>-10</h3></div>
+					</div>
+				</a>
+				<a href='ethusd.html'>
+					<div class='tickerSideTicker'>
+						<div class='tickerSideTickerItem tickerSideSymbol'><h2>ETH-USDT</h2></div>
+						<div class='tickerSideTickerItem tickerSideLastPrice'><h3 id='ethusdPrice'>1000</h2></div>
+						<div class='tickerSideTickerItem tickerSideChange'><h3 id='ethusdChange'>-50</h3></div>
+						<div class='tickerSideTickerItem tickerSideChangePercent'><h3 id='ethusdPercentChange'>-10</h3></div>
+					</div>
+				</a>
+				<a href='bnbusd.html'>
+					<div class='tickerSideTicker'>
+						<div class='tickerSideTickerItem tickerSideSymbol'><h2>BNB-USDT</h2></div>
+						<div class='tickerSideTickerItem tickerSideLastPrice'><h3 id='bnbusdPrice'>1000</h2></div>
+						<div class='tickerSideTickerItem tickerSideChange'><h3 id='bnbusdChange'>-50</h3></div>
+						<div class='tickerSideTickerItem tickerSideChangePercent'><h3 id='bnbusdPercentChange'>-10</h3></div>
+					</div>
+				</a>
+				<a href='adausd.html'>
+					<div class='tickerSideTicker'>
+						<div class='tickerSideTickerItem tickerSideSymbol'><h2>ADA-USDT</h2></div>
+						<div class='tickerSideTickerItem tickerSideLastPrice'><h3 id='adausdPrice'>1000</h2></div>
+						<div class='tickerSideTickerItem tickerSideChange'><h3 id='adausdChange'>-50</h3></div>
+						<div class='tickerSideTickerItem tickerSideChangePercent'><h3 id='adausdPercentChange'>-10</h3></div>
+					</div>
+				</a>
+				<a href='dogeusd.html'>
+					<div class='tickerSideTicker'>
+						<div class='tickerSideTickerItem tickerSideSymbol'><h2>DOGE-USDT</h2></div>
+						<div class='tickerSideTickerItem tickerSideLastPrice'><h3 id='dogeusdPrice'>1000</h2></div>
+						<div class='tickerSideTickerItem tickerSideChange'><h3 id='dogeusdChange'>-50</h3></div>
+						<div class='tickerSideTickerItem tickerSideChangePercent'><h3 id='dogeusdPercentChange'>-10</h3></div>
+					</div>
+				</a>
+				<a href='xrpusd.html'>		
+					<div class='tickerSideTicker'>
+						<div class='tickerSideTickerItem tickerSideSymbol'><h2>XRP-USDT</h2></div>
+						<div class='tickerSideTickerItem tickerSideLastPrice'><h3 id='xrpusdPrice'>1000</h2></div>
+						<div class='tickerSideTickerItem tickerSideChange'><h3 id='xrpusdChange'>-50</h3></div>
+						<div class='tickerSideTickerItem tickerSideChangePercent'><h3 id='xrpusdPercentChange'>-10</h3></div>
+					</div>	
+				</a>											
+			</div>			
+		</div>
+	</div>
+</body>
+	<script>
+		/* API Requests (Tickers) */
+
+		// BTC USD 
+
+		function getbtcusdChangePricing(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/ticker/24hr?symbol=BTCUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+				console.log(ourRequest.response)
+				responseChange = parseFloat(JSON.parse(ourRequest.response).priceChange).toFixed(2)
+				responsePercent = parseFloat(JSON.parse(ourRequest.response).priceChangePercent).toFixed(2)
+				var tradeDiv1 = document.getElementById('btcusdChange')
+				var tradeDiv2 = document.getElementById('btcusdPercentChange')
+				tradeDiv1.innerHTML = responseChange
+				tradeDiv2.innerHTML = responsePercent
+			}	
+		ourRequest.send()
+		}
+
+		function getbtcusdPrice(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/trades?symbol=BTCUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+			var tradeDiv = document.getElementById('btcusdPrice')
+			tradeDiv.innerHTML = parseFloat(JSON.parse(ourRequest.response)[499].price).toFixed(2)
+		}
+		ourRequest.send();
+		}
+
+
+		// ETH USD
+
+		function getethusdChangePricing(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/ticker/24hr?symbol=ETHUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+				console.log(ourRequest.response)
+				responseChange = parseFloat(JSON.parse(ourRequest.response).priceChange).toFixed(2)
+				responsePercent = parseFloat(JSON.parse(ourRequest.response).priceChangePercent).toFixed(2)
+				var tradeDiv1 = document.getElementById('ethusdChange')
+				var tradeDiv2 = document.getElementById('ethusdPercentChange')
+				tradeDiv1.innerHTML = responseChange
+				tradeDiv2.innerHTML = responsePercent
+			}	
+		ourRequest.send()
+		}
+
+		function getethusdPrice(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/trades?symbol=ETHUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+			var tradeDiv = document.getElementById('ethusdPrice')
+			tradeDiv.innerHTML = parseFloat(JSON.parse(ourRequest.response)[499].price).toFixed(2)	
+			}
+		ourRequest.send();
+		}
+
+
+		// BNB USD
+
+		function getbnbusdChangePricing(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/ticker/24hr?symbol=BNBUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+				console.log(ourRequest.response)
+				responseChange = parseFloat(JSON.parse(ourRequest.response).priceChange).toFixed(2)
+				responsePercent = parseFloat(JSON.parse(ourRequest.response).priceChangePercent).toFixed(2)
+				var tradeDiv1 = document.getElementById('bnbusdChange')
+				var tradeDiv2 = document.getElementById('bnbusdPercentChange')
+				tradeDiv1.innerHTML = responseChange
+				tradeDiv2.innerHTML = responsePercent
+			}	
+		ourRequest.send()
+		}
+
+		function getbnbusdPrice(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/trades?symbol=BNBUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+			var tradeDiv = document.getElementById('bnbusdPrice')
+			tradeDiv.innerHTML = parseFloat(JSON.parse(ourRequest.response)[499].price).toFixed(2)		
+			}
+		ourRequest.send();			
+		}
+
+
+		// ADA USD
+
+		function getadausdChangePricing(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/ticker/24hr?symbol=ADAUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+				console.log(ourRequest.response)
+				responseChange = parseFloat(JSON.parse(ourRequest.response).priceChange).toFixed(3)
+				responsePercent = parseFloat(JSON.parse(ourRequest.response).priceChangePercent).toFixed(3)
+				var tradeDiv1 = document.getElementById('adausdChange')
+				var tradeDiv2 = document.getElementById('adausdPercentChange')
+				tradeDiv1.innerHTML = responseChange
+				tradeDiv2.innerHTML = responsePercent
+			}	
+		ourRequest.send()
+		}
+
+		function getadausdPrice(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/trades?symbol=ADAUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+			var tradeDiv = document.getElementById('adausdPrice')
+			tradeDiv.innerHTML = parseFloat(JSON.parse(ourRequest.response)[499].price).toFixed(3)		
+			}
+		ourRequest.send();			
+		}
+
+		// DOGE USD
+
+		function getdogeusdChangePricing(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/ticker/24hr?symbol=DOGEUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+				console.log(ourRequest.response)
+				responseChange = parseFloat(JSON.parse(ourRequest.response).priceChange).toFixed(3)
+				responsePercent = parseFloat(JSON.parse(ourRequest.response).priceChangePercent).toFixed(3)
+				var tradeDiv1 = document.getElementById('dogeusdChange')
+				var tradeDiv2 = document.getElementById('dogeusdPercentChange')
+				tradeDiv1.innerHTML = responseChange
+				tradeDiv2.innerHTML = responsePercent
+			}	
+		ourRequest.send()
+		}
+
+		function getdogeusdPrice(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/trades?symbol=DOGEUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+			var tradeDiv = document.getElementById('dogeusdPrice')
+			tradeDiv.innerHTML = parseFloat(JSON.parse(ourRequest.response)[499].price).toFixed(3)		
+			}
+		ourRequest.send();			
+		}
+
+		// XRP USD
+
+		function getxrpusdChangePricing(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/ticker/24hr?symbol=XRPUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+				console.log(ourRequest.response)
+				responseChange = parseFloat(JSON.parse(ourRequest.response).priceChange).toFixed(3)
+				responsePercent = parseFloat(JSON.parse(ourRequest.response).priceChangePercent).toFixed(3)
+				var tradeDiv1 = document.getElementById('xrpusdChange')
+				var tradeDiv2 = document.getElementById('xrpusdPercentChange')
+				tradeDiv1.innerHTML = responseChange
+				tradeDiv2.innerHTML = responsePercent
+			}	
+		ourRequest.send()
+		}
+
+		function getxrpusdPrice(){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/trades?symbol=XRPUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+			var tradeDiv = document.getElementById('xrpusdPrice')
+			tradeDiv.innerHTML = parseFloat(JSON.parse(ourRequest.response)[499].price).toFixed(3)		
+			}
+		ourRequest.send();			
+		}
+
+		// Set initial ticker fields
+		getbtcusdPrice()
+		getbtcusdChangePricing()
+		getethusdPrice()
+		getethusdChangePricing()
+		getbnbusdPrice()
+		getbnbusdChangePricing()
+		getadausdPrice()
+		getadausdChangePricing()
+		getdogeusdPrice()
+		getdogeusdChangePricing()
+		getxrpusdPrice()
+		getxrpusdChangePricing()		
+
+
+		// Auto update ticker fields
+		setInterval(function(){
+			getbtcusdPrice()
+			getbtcusdChangePricing()
+			getethusdPrice()
+			getethusdChangePricing()
+			getbnbusdPrice()
+			getbnbusdChangePricing()
+			getadausdPrice()
+			getadausdChangePricing()
+			getdogeusdPrice()
+			getdogeusdChangePricing()
+			getxrpusdPrice()
+			getxrpusdChangePricing()	
+	    }, 10000);//Delay 7 seconds
+	</script>
+</html>
+
+
+
+

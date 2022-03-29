@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stock App</title>
+	<link rel='stylesheet' type='text/css' href='styles.css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div id='navbar'>
+		<div id='navInner'>
+			<a href='index.html'>
+			<div id='logo'><h1>coinview</h1></div>
+			</a>
+			<div id='searchbarContainer'>
+				<form id="searchbar" action="action_page.php">
+					<input type="text" placeholder="Search.." name="search">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>
+		<div id='navBottom'>
+			<a href='index.html'><div class='navButton'><h3>Home</h3></div></a>
+			<a href='marketData.html'><div class='navButton'><h3>Market Data</h3></div></a>
+			<a href='news.html'><div class='navButton'><h3>News</h3></div></a>
+		</div>
+		</div>
+	</div>
+
+	<div class='layoutMiddle'>
+		<div class='layoutLeft'>
+			<div class='timeframeDetails'>
+				<h2>Pair: BNB/USDT</h2>
+				<h2 id='timeframeHead'>Timeframe: 1hr</h2>
+			</div>
+			<div id='bnbusdChart'>
+			</div>
+		</div>
+		<div class='layoutRight'>
+			<div class='chartOptions'>
+				<h1>Select Chart Timeframe:</h1>
+				<a id='chartbnbusd15' href='#'>
+				<div class='chartOptionBTN'>
+					<h2>15m</h2>
+				</div>
+				</a>
+				<a id='chartbnbusd30' href='#'>
+				<div class='chartOptionBTN'>
+					<h2>30m</h2>
+				</div>
+				</a>
+				<a id='chartbnbusd1' href='#'>
+				<div class='chartOptionBTN'>
+					<h2>1hr</h2>
+				</div>
+				</a>
+				<a id='chartbnbusd4' href='#'>
+				<div class='chartOptionBTN'>
+					<h2>4hr</h2>
+				</div>
+				</a>
+				<a id='chartbnbusdDaily' href='#'>
+				<div class='chartOptionBTN'>
+					<h2>Daily</h2>
+				</div>
+				</a>
+				<a id='chartbnbusdWeekly' href='#'>
+				<div class='chartOptionBTN'>
+					<h2>Weekly</h2>
+				</div>		
+				</a>											
+			</div>
+			<div id='statistics'>
+				<h2>Statistics</h2>
+				<div class='statisticsContainer'>
+					<div class='statisticsContainerItem'>
+						<h3>Market Cap</h3>
+						<h4 class='bnbusdStat' id='bnbusdMcap'>100000</h4>
+					</div>
+					<div class='statisticsContainerItem'>					
+						<h3>24hr Volume</h3>
+						<h4 class='bnbusdStat' id='bnbusd24Volume'>100000</h4>
+					</div>
+					<div class='statisticsContainerItem'>
+						<h3>Circulating Supply</h3>
+						<h4 class='bnbusdStat' id='bnbusdCircSupply'>100000</h4>
+					</div>
+					<div class='statisticsContainerItem'>
+						<h3>Total Supply</h3>
+						<h4 class='bnbusdStat' id='bnbusdTotalSupply'>100000</h4>						
+					</div>
+					<div class='statisticsContainerItem'>
+						<h3>Max Supply</h3>
+						<h4 class='bnbusdStat' id='bnbusdMaxSupply'>100000</h4>			
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='unlockFeatures'>
+		<div class='proInfo'>
+			<div class='proTitle'>
+				<h2>Unlock Pro Research and Analysis Tools</h2>
+			</div>
+			<div class='proBtn'>
+				<h2>Purchase Pro</h2>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script>
+
+	function stats(pair, circSupply, totalSupply, maxSupply){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/trades?symbol=" + pair;
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+			var tradeDiv = document.getElementById('bnbusdMcap')
+			newStr = parseFloat(JSON.parse(ourRequest.response)[499].price).toFixed(2) * circSupply
+			const newerStr = (newStr).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			tradeDiv.innerHTML = newerStr
+			var tradeDiv2 = document.getElementById('bnbusdCircSupply')
+			tradeDiv2.innerHTML = (circSupply).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			var tradeDiv3 = document.getElementById('bnbusdTotalSupply')
+			tradeDiv3.innerHTML = (totalSupply).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			var tradeDiv4 = document.getElementById('bnbusdMaxSupply')
+			tradeDiv4.innerHTML = (maxSupply).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+		ourRequest.send();
+	}
+
+	function tickerInfo(pair){
+			var burl = "https://api.binance.com";
+			var query = "/api/v3/ticker/24hr?symbol=BNBUSDT";
+			var url = burl + query;
+			var ourRequest = new XMLHttpRequest();
+			ourRequest.open('GET', url, true);
+			ourRequest.onload = function(){
+				responseChange = parseFloat(JSON.parse(ourRequest.response).quoteVolume).toFixed(2)
+				var tradeDiv1 = document.getElementById('bnbusd24Volume')
+				tradeDiv1.innerHTML = (responseChange).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); 
+			}	
+		ourRequest.send()
+		}
+
+	
+	stats('BNBUSDT',153432897,169432897,170532785)
+	tickerInfo('BNBUSDT')
+
+
+</script>
+
+
+	<script src='https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js'></script>
+	<script type='text/javascript' src='index.js'></script>
+	<script>
+
+		function chart(interval){
+			const log = console.log;
+
+			const chartProperties = {
+				width: 800,
+				height: 400,
+				timeScale:{
+					timeVisible: true,
+					secondsVisible: false,
+				}
+			}
+
+			const domElement = document.getElementById('bnbusdChart');
+			const chart = LightweightCharts.createChart(domElement,chartProperties);
+			const candleSeries = chart.addCandlestickSeries();
+
+
+			chart.applyOptions({
+			    layout: {
+			        backgroundColor: '#15181C',
+			        textColor: '#696969',
+			        fontSize: 12,
+			        fontFamily: 'Calibri',
+			    },
+			});
+
+			chart.applyOptions({
+			    grid: {
+			        vertLines: {
+			            visible: false,
+			        },
+			        horzLines: {
+			            visible: false,
+			        },
+			    },
+			});
+
+			fetch('https://api.binance.com/api/v3/klines?symbol=BNBUSDT&interval=' + interval +'&limit=1000')
+				.then(res => res.json())
+				.then(data => {
+					const cdata = data.map(d => {
+						return {time: d[0]/1000, open: parseFloat(d[1]), high: parseFloat(d[2]), low: parseFloat(d[3]), close: parseFloat(d[4])}
+					});
+					candleSeries.setData(cdata);
+				})
+				.catch(err => log(err))
+		}
+
+		chart('1h')
+
+	</script>
+
+
+	<script type="text/javascript">
+
+
+		function removeElementsByClass(className){
+		    const elements = document.getElementsByClassName(className);
+		    while(elements.length > 0){
+		        elements[0].parentNode.removeChild(elements[0]);
+		    }
+		}
+
+
+        window.onload = function() {
+
+        var tf = document.getElementById('timeframeHead')
+
+	    var a = document.getElementById("chartbnbusd15");
+
+	    a.onclick = function() {
+	    	removeElementsByClass("tv-lightweight-charts")
+	    	tf.innerHTML = 'Timeframe: 15m'
+	    	chart('15m')
+	        return false;    	
+          }
+
+        var b = document.getElementById("chartbnbusd30");
+
+      	b.onclick = function() {
+      		removeElementsByClass("tv-lightweight-charts")
+	    	tf.innerHTML = 'Timeframe: 30m'
+      		chart('30m')
+        	return false;
+        }
+
+        var c = document.getElementById("chartbnbusd1");
+
+      	c.onclick = function() {
+      		removeElementsByClass("tv-lightweight-charts")  
+      		tf.innerHTML = 'Timeframe: 1hr'   		
+      		chart('1h')
+        	return false;	
+        }
+
+        var d = document.getElementById("chartbnbusd4");
+
+      	d.onclick = function() {
+      		removeElementsByClass("tv-lightweight-charts")
+      		tf.innerHTML = 'Timeframe: 4hr'   		      		
+      		chart('4h')
+        	return false;
+        }
+
+        var e = document.getElementById("chartbnbusdDaily");
+
+      	e.onclick = function() {
+      		removeElementsByClass("tv-lightweight-charts")
+      		tf.innerHTML = 'Timeframe: Daily'   		      		
+      		chart('1d')
+        	return false;
+        }
+
+        var f = document.getElementById("chartbnbusdWeekly");
+
+      	f.onclick = function() {
+      		removeElementsByClass("tv-lightweight-charts")
+      		tf.innerHTML = 'Timeframe: Weekly'
+      		chart('1w')
+        	return false;      
+        }
+
+        
+    }
+    </script>
+
+
+
+
+</html>
